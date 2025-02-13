@@ -1,4 +1,4 @@
-package Buoi2;
+package Buoi3;
 
 import java.util.Scanner;
 
@@ -24,6 +24,11 @@ public class Date {
 		if((year%4==0&&year%100!=0)||(year%400==0)) dayOfMonth[2]=29;
 		if(month<1||month>12||day<1||day>dayOfMonth[month]) return false;
 		return true;
+	}
+	public void copy(Date c) {
+		day=c.day;
+		month=c.month;
+		year=c.year;
 	}
 	public void nhapNgay() {
 		Scanner sc = new Scanner(System.in);
@@ -53,4 +58,9 @@ public class Date {
 		for(int i=1;i<=n;i++) temp=temp.ngayHomSau();
 		return temp;
 	}
+	@Override
+	public String toString() {
+		return day+"/"+month+"/"+year;
+	}
+	
 }

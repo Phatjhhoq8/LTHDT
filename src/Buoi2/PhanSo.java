@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class PhanSo {
 	private int tu;
 	private int mau;
-	PhanSo() {
+	public PhanSo() {
 		tu=0;
 		mau=1;
 	}
-	PhanSo(int _tu,int _mau) {
+	public PhanSo(int _tu,int _mau) {
 		tu=_tu;
 		mau=_mau;
 		if(_mau==0) {

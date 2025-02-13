@@ -1,7 +1,6 @@
-package Buoi2;
+package Buoi3;
 
 import java.util.Scanner;
-
 
 public class Diem {
 	private int x;
@@ -35,8 +34,14 @@ public class Diem {
 	public int giaTriX() {
 		return x;
 	}
+	public void thayGiaTriX(int _x) {
+		x=_x;
+	}
 	public int giaTriY() {
 		return y;
+	}
+	public void thayGiaTriY(int _y) {
+		y=_y;
 	}
 	public float khoangCach() {
 		return (float) Math.sqrt(x*x+y*y);
