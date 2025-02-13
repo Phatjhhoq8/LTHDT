@@ -35,7 +35,7 @@ public class Date {
 			System.out.println("Vui long nhap nam: ");
 			year=sc.nextInt();
 		}while(!hopLe());
-		sc.close();
+//		sc.close();
 	}
 	public Date ngayHomSau() {
 		Date temp = new Date(day,month,year);

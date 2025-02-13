@@ -18,7 +18,7 @@ public class Diem {
 		x=sc.nextInt();
 		System.out.println("Vui long nhap toa do y: ");
 		y=sc.nextInt();
-		sc.close();
+//		sc.close();
 	}
 	public void hienThi() {
 		System.out.println("(" +x+ "," +y+ ")");
