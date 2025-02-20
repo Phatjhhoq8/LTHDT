@@ -3,9 +3,7 @@ package Buoi3;
 import java.util.Scanner;
 
 public class Date {
-	private int day;
-	private int month;
-	private int year;
+	private int day,month,year;
 	public Date(){
 		day=1;
 		month=1;

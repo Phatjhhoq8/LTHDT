@@ -4,16 +4,22 @@ import java.util.Scanner;
 
 public class Gach {
 	private String ID,color;
-	private int sl,cd,cr,cn;
+	private int sl,cd,cr;
 	private long price;
-	public Gach(){}
-	public Gach(String ID,String color,int sl,int cd,int cr,int cn,long price) {
+	public Gach(){
+		this.ID="";
+		this.color="";
+		this.sl=0;
+		this.cd=0;
+		this.cr=0;
+		this.price=0;
+	}
+	public Gach(String ID,String color,int sl,int cd,int cr,long price) {
 		this.ID=ID;
 		this.color=color;
 		this.sl=sl;
 		this.cd=cd;
 		this.cr=cr;
-		this.cn=cn;
 		this.price=price;
 	}
 	public Gach(Gach c) {
@@ -22,7 +28,6 @@ public class Gach {
 		this.sl=c.sl;
 		this.cd=c.cd;
 		this.cr=c.cr;
-		this.cn=c.cn;
 		this.price=c.price;
 	}
 	public Gach copy(Gach c) {
@@ -41,8 +46,6 @@ public class Gach {
 		cd=sc.nextInt();
 		System.out.println("Nhap chieu rong cua vien gach: ");
 		cr=sc.nextInt();
-		System.out.println("Nhap chieu ngang cua vien gach: ");
-		cn=sc.nextInt();
 		System.out.println("Nhap gia cua hop gach: ");
 		price=sc.nextLong();
 	}
@@ -53,7 +56,6 @@ public class Gach {
 		System.out.printf("So luong trong mot hop: %d\n",sl);
 		System.out.printf("Chieu dai: %d\n",cd);
 		System.out.printf("Chieu rong: %d\n",cr);
-		System.out.printf("Chieu ngang: %d\n",cn);
 		System.out.printf("Gia mot hop: %d\n",price);
 	}
 	float giaBanLe() {
@@ -64,7 +66,7 @@ public class Gach {
 	}
 	int soLuongHop(int CD,int CR) {
 		int d=(int) Math.ceil((1.0*CD/(cd*sl)));
-		int r= (int) Math.ceil((1.0*cr/(cr*sl)));
+		int r= (int) Math.ceil((1.0*CR/(cr*sl)));
 		return d*r;
 	}
 	float chiPhiLot() {

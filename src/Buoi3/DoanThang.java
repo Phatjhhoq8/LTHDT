@@ -15,14 +15,8 @@ public class DoanThang {
 		d2=new Diem(bx,by);
 	}
 	public void nhap() {
-		Diem t1=new Diem();
-		t1.nhapDiem();
-		Diem t2=new Diem();
-		t2.nhapDiem();
-		d1.thayGiaTriX(t1.giaTriX());
-		d1.thayGiaTriY(t1.giaTriY());
-		d2.thayGiaTriX(t2.giaTriX());
-		d2.thayGiaTriY(t2.giaTriY());
+		d1.nhapDiem();
+		d2.nhapDiem();
 	}
 	public void hienThi() {
 		System.out.printf("Dinh dau: (%d,%d)\nDinh cuoi: (%d,%d)\n",d1.giaTriX(),d1.giaTriY(),d2.giaTriX(),d2.giaTriY());
@@ -34,6 +28,6 @@ public class DoanThang {
 		d2.thayGiaTriY(d2.giaTriY()+y);
 	}
 	public float doDaiDoanThang() {
-		return (float)Math.sqrt((d2.giaTriX()-d1.giaTriX())*(d2.giaTriX()-d1.giaTriX())+(d2.giaTriY()-d1.giaTriY())*(d2.giaTriY()-d1.giaTriY()));
+		return d1.khoangCach(d2);
 	}
 }

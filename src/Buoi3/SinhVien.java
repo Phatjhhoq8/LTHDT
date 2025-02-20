@@ -25,6 +25,9 @@ public class SinhVien implements Comparable<SinhVien> {
         this.hoten = hoten;
         this.ngaysinh.copy(ngaysinh);
         int idx = this.hoten.lastIndexOf(" ");
+        this.slHocPhan=0;
+        this.nameHp = new ArrayList<>();
+        this.diemHp = new ArrayList<>();
         this.ten = (idx == -1) ? this.hoten : this.hoten.substring(idx + 1);
     }
 
@@ -57,22 +60,25 @@ public class SinhVien implements Comparable<SinhVien> {
             this.nameHp.add(temp);
             System.out.println("Nhap diem: ");
             String point = sc.nextLine();
-            this.diemHp.add(point);
+            this.diemHp.add(point.toUpperCase());
             nhapDiem(temp,point);
         }
     }
 
     public void nhapDiem(String mon, String diem) {
         int idx = nameHp.indexOf(mon);
-        if (idx == -1) return;
-        diemHp.set(idx, diem);
+        if (idx == -1) {
+        	nameHp.add(mon);
+        	diemHp.add(diem.toUpperCase());
+        }
+        else diemHp.set(idx, diem);
     }
 
     public float diemTrungBinh() {
         float sum = 0;
         int cnt = 0;
         for (int i = 0; i < slHocPhan; i++) {
-            switch (diemHp.get(i)) {
+            switch (diemHp.get(i).toUpperCase()) {
                 case "A": sum += 4; break;
                 case "B+": sum += 3.5f; break;
                 case "B": sum += 3.0f; break;
@@ -81,6 +87,7 @@ public class SinhVien implements Comparable<SinhVien> {
                 case "D+": sum += 1.5f; break;
                 case "D": sum += 1.0f; break;
                 case "E": sum += 0.5f; break;
+                case "F": sum+=0.f;break;
                 case "@": cnt++; break;
             }
         }
@@ -99,7 +106,13 @@ public class SinhVien implements Comparable<SinhVien> {
             diemHp.remove(idx);
         }
     }
-
+    public boolean pen() {
+    	for(String s : diemHp) {
+    		System.out.println(s);
+    		if(s.toUpperCase().equals("F")) return true;
+    	}
+    	return false;
+    }
     @Override
     public String toString() {
         return mssv + " - " + hoten + " - " + ngaysinh.toString();
